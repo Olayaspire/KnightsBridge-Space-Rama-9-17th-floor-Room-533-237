@@ -1,1 +1,249 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Land with House – Pridi 26</title>
 
+<style>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  margin: 20px;
+  background: #fff;
+  color: #222;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+/* ===== ราคาเด่น ===== */
+.price-box {
+  background: linear-gradient(135deg, #fff6e5, #ffffff);
+  border: 2px solid #f2c94c;
+  border-radius: 16px;
+  padding: 20px;
+  max-width: 420px;
+  margin-bottom: 25px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.price-tag {
+  font-size: 14px;
+  font-weight: bold;
+  color: #b45309;
+}
+
+.price {
+  font-size: 32px;
+  font-weight: bold;
+  color: #c0392b;
+}
+
+.price-sub {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.price-info span {
+  display: inline-block;
+  background: #fff;
+  padding: 6px 10px;
+  margin: 4px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  font-size: 14px;
+}
+
+/* ===== Gallery ===== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Modal ดูรูปใหญ่ ===== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal img {
+  max-width: 95%;
+  max-height: 95%;
+  border-radius: 12px;
+}
+
+/* ===== ปุ่มติดต่อ ===== */
+..contact-buttons {
+    position: fixed;
+    right: 20px;
+    bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 999;
+}
+
+.contact-buttons a {
+    display: block;
+    padding: 14px 22px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    transition: 0.2s;
+}
+
+.contact-buttons a:hover {
+    transform: scale(1.05);
+}
+
+.call-btn {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.line-btn {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.whatsapp-btn {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+}
+
+/* ===== Map ===== */
+.map {
+  margin-top: 30px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+</style>
+</head>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img">
+</div>
+
+<style>
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+</style>
+
+<script>
+function openLightbox(img) {
+    document.getElementById("lightbox-img").src = img.src;
+    document.getElementById("lightbox").style.display = "flex";
+}
+
+function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+}
+</script>  
+<body>
+
+<h1>Land with House – Pridi 26</h1>
+
+<section class="price-box">
+  <div class="price-tag">💰 ราคาเสนอขาย</div>
+  <div class="price">17,710,000 บาท</div>
+  <div class="price-sub">ค่าโอน 50/50</div>
+  <div class="price-info">
+    <span>📐 77 ตร.ว.</span>
+    <span>📍 สุขุมวิท 71</span>
+    <span>🚆 BTS พระโขนง</span>
+  </div>
+</section>
+
+<!-- ===== Gallery ===== -->
+<div class="gallery">
+  <img src="img.jpg" onclick="openLightbox(this)">
+  <img src="img1.jpg" onclick="openLightbox(this)">
+  <img src="img2.jpg" onclick="openLightbox(this)">
+  <img src="img3.jpg" onclick="openLightbox(this)">
+  <img src="img4.jpg" onclick="openLightbox(this)">
+  <img src="img5.jpg" onclick="openLightbox(this)">
+  <img src="img6.jpg" onclick="openLightbox(this)">
+  <img src="img7.jpg" onclick="openLightbox(this)">
+  <img src="img8.jpg" onclick="openLightbox(this)">
+  <img src="img9.jpg" onclick="openLightbox(this)">
+  <img src="img10.jpg" onclick="openLightbox(this)">
+  <img src="img11.jpg" onclick="openLightbox(this)">
+  <img src="img12.jpg" onclick="openLightbox(this)">
+</div>
+
+<!-- ===== Google Map ===== -->
+<div class="map">
+  <iframe
+    src="https://www.google.com/maps?q=Pridi%2026&output=embed"
+    width="100%"
+    height="350"
+    style="border:0;"
+    loading="lazy">
+  </iframe>
+</div>
+
+<!-- ===== Modal ===== -->
+<div class="modal" id="modal" onclick="closeModal()">
+  <img id="modalImg">
+</div>
+
+<!-- ===== ปุ่มลอย ===== -->
+<div class="contact-float">
+ <a class="btn call" href="tel:0931359945">Call</a> 093-1359945
+ <a class="btn line" href="https://line.me/ti/p/~oleproperty">LINE</a> @aspireproperty
+ <a class="btn whatsapp" href="https://wa.me/66931359945">WhatsApp</a>
+</div>
+
+<script>
+function openModal(src) {
+  document.getElementById("modal").style.display = "flex";
+  document.getElementById("modalImg").src = src;
+}
+
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+</script>
+
+</body>
+</html>
