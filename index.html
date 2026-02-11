@@ -17,7 +17,6 @@ h1 {
   margin-bottom: 10px;
 }
 
-/* ===== ราคาเด่น ===== */
 .price-box {
   background: linear-gradient(135deg, #fff6e5, #ffffff);
   border: 2px solid #f2c94c;
@@ -56,7 +55,6 @@ h1 {
   font-size: 14px;
 }
 
-/* ===== Gallery ===== */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -77,64 +75,50 @@ h1 {
   transform: scale(1.05);
 }
 
-/* ===== Modal ดูรูปใหญ่ ===== */
-.modal {
+.lightbox {
   display: none;
   position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
   justify-content: center;
   align-items: center;
-  z-index: 9999;
 }
 
-.modal img {
-  max-width: 95%;
-  max-height: 95%;
-  border-radius: 12px;
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
 }
 
-/* ===== ปุ่มติดต่อ ===== */
-..contact-buttons {
-    position: fixed;
-    right: 20px;
-    bottom: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    z-index: 999;
+.contact-buttons {
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 999;
 }
 
 .contact-buttons a {
-    display: block;
-    padding: 14px 22px;
-    border-radius: 50px;
-    font-size: 16px;
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
-    text-align: center;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-    transition: 0.2s;
+  display: block;
+  padding: 14px 22px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  text-align: center;
 }
 
-.contact-buttons a:hover {
-    transform: scale(1.05);
-}
+.call-btn { background: #3b82f6; }
+.line-btn { background: #22c55e; }
+.whatsapp-btn { background: #25D366; }
 
-.call-btn {
-    background: linear-gradient(135deg, #3b82f6, #2563eb);
-}
-
-.line-btn {
-    background: linear-gradient(135deg, #22c55e, #16a34a);
-}
-
-.whatsapp-btn {
-    background: linear-gradient(135deg, #25D366, #128C7E);
-}
-
-/* ===== Map ===== */
 .map {
   margin-top: 30px;
   border-radius: 16px;
@@ -143,67 +127,29 @@ h1 {
 </style>
 </head>
 
-<!-- Lightbox -->
-<div id="lightbox" class="lightbox" onclick="closeLightbox()">
-    <img id="lightbox-img">
-</div>
-
-<style>
-.lightbox {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.9);
-    justify-content: center;
-    align-items: center;
-}
-
-.lightbox img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 10px;
-}
-</style>
-
-<script>
-function openLightbox(img) {
-    document.getElementById("lightbox-img").src = img.src;
-    document.getElementById("lightbox").style.display = "flex";
-}
-
-function closeLightbox() {
-    document.getElementById("lightbox").style.display = "none";
-}
-</script>  
 <body>
 
 <h1>Land with House – Pridi 26</h1>
 
 <section class="price-box">
   <div class="price-tag">💰 ราคาเสนอขาย</div>
-  <div class="price"> 4,700,000 บาท</div>
+  <div class="price">4,700,000 บาท</div>
   <div class="price-sub">ค่าโอน 50/50</div>
   <div class="price-info">
     <span>📐 23.83 ตร.ม.</span>
     <span>📍 Rama-9</span>
-    <span>🚆  MRT Rama 9</span>
+    <span>🚆 MRT Rama 9</span>
   </div>
 </section>
 
-<!-- ===== Gallery ===== -->
 <div class="gallery">
-<img src="img.jpg">
-<img src="img1.jpg">
-<img src="img2.jpg">
-<img src="img3.jpg">
-<img src="img4.jpg">
+  <img src="img.jpg" onclick="openLightbox(this)">
+  <img src="img1.jpg" onclick="openLightbox(this)">
+  <img src="img2.jpg" onclick="openLightbox(this)">
+  <img src="img3.jpg" onclick="openLightbox(this)">
+  <img src="img4.jpg" onclick="openLightbox(this)">
 </div>
 
-<!-- ===== Google Map ===== -->
 <div class="map">
   <iframe
     src="https://www.google.com/maps?q=Rama9%2026&output=embed"
@@ -214,31 +160,26 @@ function closeLightbox() {
   </iframe>
 </div>
 
-<!-- ===== Modal ===== -->
-<div class="modal" id="modal" onclick="closeModal()">
-  <img id="modalImg">
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
 </div>
 
-<!-- ===== ปุ่มลอย ===== -->
-<div class="contact-float">
- <a class="btn call" href="tel:0931359945">Call</a> 093-1359945
- <a class="btn line" href="https://line.me/ti/p/~oleproperty">LINE</a> @aspireproperty
- <a class="btn whatsapp" href="https://wa.me/66931359945">WhatsApp</a>
+<div class="contact-buttons">
+  <a class="call-btn" href="tel:0931359945">Call 093-135-9945</a>
+  <a class="line-btn" href="https://line.me/ti/p/~oleproperty">LINE @aspireproperty</a>
+  <a class="whatsapp-btn" href="https://wa.me/66931359945">WhatsApp</a>
 </div>
 
 <script>
-function openModal(src) {
-  document.getElementById("modal").style.display = "flex";
-  document.getElementById("modalImg").src = src;
+function openLightbox(img) {
+  document.getElementById("lightbox-img").src = img.src;
+  document.getElementById("lightbox").style.display = "flex";
 }
 
-function closeModal() {
-  document.getElementById("modal").style.display = "none";
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
 }
 </script>
 
 </body>
 </html>
-
-
-
